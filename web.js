@@ -5,9 +5,8 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 
-  var fileContentBuffer = fs.readFile('index.htm');
-  var fileStr = fileContentBuffer.toString("utf-8",0,fileContentBuffer.length);
-
+  var fileStr = fs.readFileSync('index.htm');
+ 
   response.send(fileStr);
 });
 
