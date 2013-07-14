@@ -5,9 +5,10 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 
+  // Reads contents from the index.html file into a string 
   var fileStr = fs.readFileSync('index.html');
  
-//  console.log(fileStr);
+  // Prints contents out inside the webpage
   response.send(fileStr.toString());
 });
 
